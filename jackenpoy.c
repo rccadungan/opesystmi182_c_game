@@ -14,19 +14,20 @@ int main(void) {
   noecho();
   curs_set(FALSE);
 	
-echo ("Welcome!\n";)
-echo ("This is a rock, paper, and scissor game. \n To play the game, enter 1 for Rock, 2 for Paper and 3 for Scissors. You will be playing against the computer.");
-echo ("Player's Choice: \n");
-scanf ("%d, &user_input");
-	if (&user_input == 1) {
-	getchw rock()
-	}else if (&user_input == 2){
-	getchw paper()
-	}else if (&user_input == 3){
-	getchw scissors()
+mvaddstr (10, 10, "Welcome!\n");
+mvaddstr (11, 10, "This is a rock, paper, and scissor game. \n To play the game, enter 1 for Rock, 2 for Paper and 3 for Scissors. You will be playing against the computer.");
+mvaddstr (12, 10, "Player's Choice: \n");
+int user_input = getch();
+	if (user_input == 1) {
+	rock();
+	}else if (user_input == 2){
+	paper();
+	}else if (user_input == 3){
+	scissors();
 	}else {
-	printf("/n Invalid input")
+	printf("/n Invalid input");
 	}
+reload();
  
   rock();
   reload();
