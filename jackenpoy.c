@@ -14,9 +14,25 @@ int main(void) {
   noecho();
   curs_set(FALSE);
 	
-mvaddstr (10, 10, "Welcome!\n");
-mvaddstr (11, 10, "This is a rock, paper, and scissor game. \n To play the game, enter 1 for Rock, 2 for Paper and 3 for Scissors. You will be playing against the computer.");
-mvaddstr (12, 10, "Player's Choice: \n");
+mvaddstr (1, 80, "Welcome!\n");
+mvaddstr (2, 65, "This is a rock, paper, and scissor game.\n");
+mvaddstr (3, 30, "To play the game, enter 1 for Rock, 2 for Paper and 3 for Scissors. You will be playing against the computer.");
+mvaddstr (6, 45, "Player's Choice: ");
+mvaddstr (6, 110, "Computer's Choice: \n");
+mvaddstr(7, 80,  "     |     ");
+mvaddstr(8, 80,  "     |     ");
+mvaddstr(9, 80,  "     |     ");
+mvaddstr(10, 80, "     |     ");
+mvaddstr(11, 80, "     |     ");
+mvaddstr(12, 80, "     |     ");
+mvaddstr(13, 80, "     |     ");
+mvaddstr(14, 80, "     |     ");
+mvaddstr(15, 80, "     |     ");
+mvaddstr(16, 80, "     |     ");
+mvaddstr(17, 80, "     |     ");
+mvaddstr(18, 80, "     |     ");
+
+
 int user_input = getch();
 	if (user_input == 1) {
 	rock();
@@ -25,7 +41,7 @@ int user_input = getch();
 	}else if (user_input == 3){
 	scissors();
 	}else {
-	printf("/n Invalid input");
+	printf("/nInvalid input");
 	}
 reload();
  
@@ -50,28 +66,28 @@ refresh();
 }
 
 int  rock (){
-  mvaddstr(10, 33, "    ***      ");
-  mvaddstr(10, 33, "   *****     ");
-  mvaddstr(11, 33, "  *******    ");
-  mvaddstr(12, 33, "   *****     ");
-  mvaddstr(13, 33, "    ***      ");
-  mvaddstr(13, 33, "     *        ");
+  mvaddstr(10, 45, "    ***      ");
+  mvaddstr(10, 45, "   *****     ");
+  mvaddstr(11, 45, "  *******    ");
+  mvaddstr(12, 45, "   *****     ");
+  mvaddstr(13, 45, "    ***      ");
+  mvaddstr(13, 45, "     *        ");
 } 
 
 int paper(){
-  mvaddstr(10, 33, "      ******   ");
-  mvaddstr(10, 33, "     ******    ");
-  mvaddstr(11, 33, "    ******     ");
-  mvaddstr(12, 33, "   ******      ");
-  mvaddstr(13, 33, "  ******       ");
-  mvaddstr(13, 33, " ******        ");
+  mvaddstr(10, 45, "      ******   ");
+  mvaddstr(10, 45, "     ******    ");
+  mvaddstr(11, 45, "    ******     ");
+  mvaddstr(12, 45, "   ******      ");
+  mvaddstr(13, 45, "  ******       ");
+  mvaddstr(13, 45, " ******        ");
 }
 
 int scissors(){
-  mvaddstr(10, 33, "  **    **   ");
-  mvaddstr(10, 33, "   **  **    ");
-  mvaddstr(11, 33, "    ****     ");
-  mvaddstr(12, 33, "    ***      ");
-  mvaddstr(13, 33, "  **   **    ");
-  mvaddstr(13, 33, "  **   **    ");
+  mvaddstr(10, 45, "  **    **   ");
+  mvaddstr(10, 45, "   **  **    ");
+  mvaddstr(11, 45, "    ****     ");
+  mvaddstr(12, 45, "    ***      ");
+  mvaddstr(13, 45, "  **   **    ");
+  mvaddstr(13, 45, "  **   **    ");
 }
