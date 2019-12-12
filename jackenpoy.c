@@ -41,10 +41,22 @@ int user_input = getch();
 	}else if (user_input == 3){
 	scissors();
 	}else {
-	printf("/nInvalid input");
+	printf("Invalid input");
 	}
 reload();
- 
+
+int randint(int n){ 
+	if (n == 1){
+	rock();
+	}else if (n == 2){
+	paper();
+	}else if (n == 3){
+	scissors();
+	}else {
+	printf("Invalid input");
+	}}
+reload();
+
   rock();
   reload();
 
