@@ -1,11 +1,19 @@
 #include <ncurses.h>     // ncurses library
+#include <stdio.h>
+#include <stdlib.h>
 /* Internal function declarations   */
-
-int player1_input, player2_input;
+int rock ();           
+int paper();
+int scissors();
+int rock_p2 ();
+int paper_p2 ();
+int scissors_p2 ();
+int reload();
+char player1_input, player2_input;
 
 /* main function */
 
-int main() {
+int main(void) {
 initscr();
 curs_set(FALSE);
 
@@ -13,39 +21,60 @@ mvaddstr (1, 80, "Welcome!\n");
 mvaddstr (2, 65, "This is a rock, paper, and scissors game.\n");
 mvaddstr (3, 30, "To play the game, enter 1 for Rock, 2 for Paper and 3 for Scissors. This is a two-player game.");
 mvaddstr (6, 45, "Player 1 Choice: ");
-scanf("%d", &player1_input);
+player1_input = getch();
+	if (player1_input == '1') {
+	rock();
+	}else if (player1_input == '2'){
+	paper();
+	}else if (player1_input == '3'){
+	scissors();
+	}else {
+	mvaddstr(19, 80,"Invalid input /n");
+	}
+refresh();
+
 mvaddstr (6, 110, "Player 2 Choice: ");
-scanf("%d", &player2_input);
+player2_input= getch();
+	if (player2_input == '1') {
+	rock_p2();
+	}else if (player2_input == '2'){
+	paper_p2();
+	}else if (player2_input == '3'){
+	scissors_p2();
+	}else {
+	mvaddstr(19, 80,"Invalid input /n");
+	}
+reload();
 
 {
      
     if ((player1_input==1)&&(player2_input==1))
       {
-        printf("\nNobody Wins");
+        printf("Nobody Wins");
       }
     else if ((player1_input==1)&&(player2_input==2))
-      { printf("\nPaper Covers Rock");
+      { printf("Paper Covers Rock");
       }
     else if ((player1_input==1)&&(player2_input==3))
-      { printf("\nRock Breaks Scissors");
+      { printf("Rock Breaks Scissors");
       }
     else if((player1_input==2)&&(player2_input==1))
-      { printf("\nPaper Covers Rock");
+      { printf("Paper Covers Rock");
       }
     else if((player1_input==2)&&(player2_input==2))
-      { printf("\nNobody Wins");
+      { printf("Nobody Wins");
       }
     else if((player1_input==2)&&(player2_input==3))
-      { printf("\nScissors Cuts Paper");
+      { printf("Scissors Cuts Paper");
       }
     else if((player1_input==3)&&(player2_input==1))
-      { printf("\nRock Breaks Scissors");
+      { printf("Rock Breaks Scissors");
       }
     else if((player1_input==3)&&(player2_input==2))
-      { printf("\nScissors Cuts Paper");
+      { printf("Scissors Cuts Paper");
       }
     else if((player1_input==3)&&(player2_input==3))
-      { printf("\nNobody Wins");
+      { printf("Nobody Wins");
       }
     else
       { printf("You have selected an invalid selection.\n");
@@ -56,4 +85,64 @@ scanf("%d", &player2_input);
    }
   endwin();
   return 0;
+}
+
+/* internal functions  */
+int reload()
+{	
+refresh();
+  getch();
+}
+
+int rock (){
+  mvaddstr(10, 45, "    ***      ");
+  mvaddstr(10, 45, "   *****     ");
+  mvaddstr(11, 45, "  *******    ");
+  mvaddstr(12, 45, "   *****     ");
+  mvaddstr(13, 45, "    ***      ");
+  mvaddstr(13, 45, "     *        ");
+} 
+
+int paper(){
+  mvaddstr(10, 45, "      ******   ");
+  mvaddstr(10, 45, "     ******    ");
+  mvaddstr(11, 45, "    ******     ");
+  mvaddstr(12, 45, "   ******      ");
+  mvaddstr(13, 45, "  ******       ");
+  mvaddstr(13, 45, " ******        ");
+}
+
+int scissors(){
+  mvaddstr(10, 45, "  **    **   ");
+  mvaddstr(10, 45, "   **  **    ");
+  mvaddstr(11, 45, "    ****     ");
+  mvaddstr(12, 45, "    ***      ");
+  mvaddstr(13, 45, "  **   **    ");
+  mvaddstr(13, 45, "  **   **    ");
+}
+int  rock_p2 (){
+  mvaddstr(10, 110, "    ***      ");
+  mvaddstr(10, 110, "   *****     ");
+  mvaddstr(11, 110, "  *******    ");
+  mvaddstr(12, 110, "   *****     ");
+  mvaddstr(13, 110, "    ***      ");
+  mvaddstr(13, 110, "     *        ");
+} 
+
+int paper_p2 (){
+  mvaddstr(10, 110, "      ******   ");
+  mvaddstr(10, 110, "     ******    ");
+  mvaddstr(11, 110, "    ******     ");
+  mvaddstr(12, 110, "   ******      ");
+  mvaddstr(13, 110, "  ******       ");
+  mvaddstr(13, 110, " ******        ");
+}
+
+int scissors_p2 (){
+  mvaddstr(10, 110, "  **    **   ");
+  mvaddstr(10, 110, "   **  **    ");
+  mvaddstr(11, 110, "    ****     ");
+  mvaddstr(12, 110, "    ***      ");
+  mvaddstr(13, 110, "  **   **    ");
+  mvaddstr(13, 110, "  **   **    ");
 }
