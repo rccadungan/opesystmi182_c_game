@@ -1,14 +1,16 @@
 #include <ncurses.h>     // ncurses library
+#include <stdlib.h>
+#include<time.h>
 /* Internal function declarations   */
 
-int  rock ();           
+int rock ();           
 int paper();
 int scissors();
-int  rock_comp ();
+int rock_comp ();
 int paper_comp ();
 int scissors_comp ();
 int reload();
-int user_input;
+char user_input;
 
 /* main function */
 
@@ -16,6 +18,7 @@ int main(void) {
   initscr();
   noecho();
   curs_set(FALSE);
+  srand(time(0));
 	
 mvaddstr (1, 80, "Welcome!\n");
 mvaddstr (2, 65, "This is a rock, paper, and scissors game.\n");
@@ -34,20 +37,21 @@ mvaddstr(15, 80, "     |     ");
 mvaddstr(16, 80, "     |     ");
 mvaddstr(17, 80, "     |     ");
 mvaddstr(18, 80, "     |     ");
+refresh();
 
-int user_input = getch();
-	if (user_input == 1) {
+user_input = getch();
+	if (user_input == '1') {
 	rock();
-	}else if (user_input == 2){
+	}else if (user_input == '2'){
 	paper();
-	}else if (user_input == 3){
+	}else if (user_input == '3'){
 	scissors();
 	}else {
-	printf("Invalid input");
+	mvaddstr(19, 80,"Invalid input /n");
 	}
-reload();
+refresh();
 
-int randint(int n){ 
+int n = (rand()%3+1);
 	if (n == 1){
 	rock_comp();
 	}else if (n == 2){
@@ -55,28 +59,9 @@ int randint(int n){
 	}else if (n == 3){
 	scissors_comp();
 	}else {
-	printf("Invalid input");
-	}}
+	printf("Invalid input /n");
+	}
 reload();
-
-  rock();
-  reload();
-
-  paper();
-  reload();
-
-  scissors();
-  reload();
-
-  rock_comp();
-  reload();
-
-  paper_comp();
-  reload();
-
-  scissors_comp();
-  reload();
-
   endwin();
   return 0;
 } 
