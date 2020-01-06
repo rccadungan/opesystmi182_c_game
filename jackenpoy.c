@@ -1,6 +1,6 @@
 #include <ncurses.h>     // ncurses library
 #include <stdlib.h>
-#include<time.h>
+#include <time.h>
 /* Internal function declarations   */
 
 int rock ();           
@@ -39,6 +39,7 @@ mvaddstr(17, 80, "     |     ");
 mvaddstr(18, 80, "     |     ");
 refresh();
 
+
 user_input = getch();
 	if (user_input == '1') {
 	rock();
@@ -47,7 +48,7 @@ user_input = getch();
 	}else if (user_input == '3'){
 	scissors();
 	}else {
-	mvaddstr(19, 80,"Invalid input /n");
+	mvaddstr(19, 80,"Invalid input");
 	}
 refresh();
 
@@ -59,9 +60,43 @@ int n = (rand()%3+1);
 	}else if (n == 3){
 	scissors_comp();
 	}else {
-	printf("Invalid input /n");
+	mvaddstr(19, 80,"Invalid input /n");
 	}
 reload();
+
+    if ((user_input=='1')&&(n==1))
+      {
+        mvaddstr(19, 80, "Nobody Wins");
+      }
+    else if ((user_input=='1')&&(n==2))
+      { mvaddstr(19, 80, "Paper Covers Rock");
+      }
+    else if ((user_input=='1')&&(n==3))
+      { mvaddstr(19, 80, "Rock Breaks Scissors");
+      }
+    else if((user_input=='2')&&(n==1))
+      { mvaddstr(19, 80, "Paper Covers Rock");
+      }
+    else if((user_input=='2')&&(n==2))
+      { mvaddstr(19, 80, "Nobody Wins");
+      }
+    else if((user_input=='2')&&(n==3))
+      { mvaddstr(19, 80, "Scissors Cuts Paper");
+      }
+    else if((user_input=='3')&&(n==1))
+      { mvaddstr(19, 80, "Rock Breaks Scissors");
+      }
+    else if((user_input=='3')&&(n==2))
+      { mvaddstr(19, 80, "Scissors Cuts Paper");
+      }
+    else if((user_input=='3')&&(n==3))
+      { mvaddstr(19, 80,"Nobody Wins");
+      }
+    else
+      { mvaddstr(19, 80, "You have selected an invalid selection.\n");       
+      }
+
+reload(); 
   endwin();
   return 0;
 } 
