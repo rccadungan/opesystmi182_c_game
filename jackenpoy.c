@@ -66,34 +66,34 @@ reload();
 
     if ((user_input=='1')&&(n==1))
       {
-        mvaddstr(19, 80, "Nobody Wins");
+        mvaddstr(20, 78, "Nobody Wins");
       }
     else if ((user_input=='1')&&(n==2))
-      { mvaddstr(19, 80, "Paper Covers Rock");
+      { mvaddstr(20, 77, "Paper Covers Rock");
       }
     else if ((user_input=='1')&&(n==3))
-      { mvaddstr(19, 80, "Rock Breaks Scissors");
+      { mvaddstr(20, 75, "Rock Breaks Scissors");
       }
     else if((user_input=='2')&&(n==1))
-      { mvaddstr(19, 80, "Paper Covers Rock");
+      { mvaddstr(20, 77, "Paper Covers Rock");
       }
     else if((user_input=='2')&&(n==2))
-      { mvaddstr(19, 80, "Nobody Wins");
+      { mvaddstr(20, 75, "Nobody Wins");
       }
     else if((user_input=='2')&&(n==3))
-      { mvaddstr(19, 80, "Scissors Cuts Paper");
+      { mvaddstr(20, 75, "Scissors Cuts Paper");
       }
     else if((user_input=='3')&&(n==1))
-      { mvaddstr(19, 80, "Rock Breaks Scissors");
+      { mvaddstr(20, 75, "Rock Breaks Scissors");
       }
     else if((user_input=='3')&&(n==2))
-      { mvaddstr(19, 80, "Scissors Cuts Paper");
+      { mvaddstr(20, 75, "Scissors Cuts Paper");
       }
     else if((user_input=='3')&&(n==3))
-      { mvaddstr(19, 80,"Nobody Wins");
+      { mvaddstr(20, 75,"Nobody Wins");
       }
     else
-      { mvaddstr(19, 80, "You have selected an invalid selection.\n");       
+      { mvaddstr(20, 75, "You have selected an invalid selection.\n");       
       }
 
 reload(); 
@@ -109,55 +109,55 @@ refresh();
 }
 
 int  rock (){
-  mvaddstr(10, 45, "    ***      ");
-  mvaddstr(10, 45, "   *****     ");
-  mvaddstr(11, 45, "  *******    ");
-  mvaddstr(12, 45, "   *****     ");
-  mvaddstr(13, 45, "    ***      ");
-  mvaddstr(13, 45, "     *        ");
+  mvaddstr(10, 48, "    ***      ");
+  mvaddstr(10, 48, "   *****     ");
+  mvaddstr(11, 48, "  *******    ");
+  mvaddstr(12, 48, "   *****     ");
+  mvaddstr(13, 48, "    ***      ");
+  mvaddstr(13, 48, "     *        ");
 } 
 
 int paper(){
-  mvaddstr(10, 45, "      ******   ");
-  mvaddstr(10, 45, "     ******    ");
-  mvaddstr(11, 45, "    ******     ");
-  mvaddstr(12, 45, "   ******      ");
-  mvaddstr(13, 45, "  ******       ");
-  mvaddstr(13, 45, " ******        ");
+  mvaddstr(10, 48, "      ******   ");
+  mvaddstr(10, 48, "     ******    ");
+  mvaddstr(11, 48, "    ******     ");
+  mvaddstr(12, 48, "   ******      ");
+  mvaddstr(13, 48, "  ******       ");
+  mvaddstr(13, 48, " ******        ");
 }
 
 int scissors(){
-  mvaddstr(10, 45, "  **    **   ");
-  mvaddstr(10, 45, "   **  **    ");
-  mvaddstr(11, 45, "    ****     ");
-  mvaddstr(12, 45, "    ***      ");
-  mvaddstr(13, 45, "  **   **    ");
-  mvaddstr(13, 45, "  **   **    ");
+  mvaddstr(10, 48, "  **    **   ");
+  mvaddstr(10, 48, "   **  **    ");
+  mvaddstr(11, 48, "    ****     ");
+  mvaddstr(12, 48, "    ***      ");
+  mvaddstr(13, 48, "  **   **    ");
+  mvaddstr(13, 48, "  **   **    ");
 }
 
 int  rock_comp (){
-  mvaddstr(10, 110, "    ***      ");
-  mvaddstr(10, 110, "   *****     ");
-  mvaddstr(11, 110, "  *******    ");
-  mvaddstr(12, 110, "   *****     ");
-  mvaddstr(13, 110, "    ***      ");
-  mvaddstr(13, 110, "     *        ");
+  mvaddstr(10, 112, "    ***      ");
+  mvaddstr(10, 112, "   *****     ");
+  mvaddstr(11, 112, "  *******    ");
+  mvaddstr(12, 112, "   *****     ");
+  mvaddstr(13, 112, "    ***      ");
+  mvaddstr(13, 112, "     *        ");
 } 
 
 int paper_comp (){
-  mvaddstr(10, 110, "      ******   ");
-  mvaddstr(10, 110, "     ******    ");
-  mvaddstr(11, 110, "    ******     ");
-  mvaddstr(12, 110, "   ******      ");
-  mvaddstr(13, 110, "  ******       ");
-  mvaddstr(13, 110, " ******        ");
+  mvaddstr(10, 112, "      ******   ");
+  mvaddstr(10, 112, "     ******    ");
+  mvaddstr(11, 112, "    ******     ");
+  mvaddstr(12, 112, "   ******      ");
+  mvaddstr(13, 112, "  ******       ");
+  mvaddstr(13, 112, " ******        ");
 }
 
 int scissors_comp (){
-  mvaddstr(10, 110, "  **    **   ");
-  mvaddstr(10, 110, "   **  **    ");
-  mvaddstr(11, 110, "    ****     ");
-  mvaddstr(12, 110, "    ***      ");
-  mvaddstr(13, 110, "  **   **    ");
-  mvaddstr(13, 110, "  **   **    ");
+  mvaddstr(10, 112, "  **    **   ");
+  mvaddstr(10, 112, "   **  **    ");
+  mvaddstr(11, 112, "    ****     ");
+  mvaddstr(12, 112, "    ***      ");
+  mvaddstr(13, 112, "  **   **    ");
+  mvaddstr(13, 112, "  **   **    ");
 }
