@@ -19,17 +19,17 @@ curs_set(FALSE);
 
 mvaddstr (1, 80, "Welcome!\n");
 mvaddstr (2, 65, "This is a rock, paper, and scissors game.\n");
-mvaddstr (3, 30, "To play the game, enter 1 for Rock, 2 for Paper and 3 for Scissors. This is a two-player game.");
+mvaddstr (3, 30, "To play the game, enter 1 for Rock, 2 for Paper and 3 for Scissors. This is a two-player game. Press ENTER to see the result.");
 mvaddstr (6, 45, "Player 1 Choice: ");
 player1_input = getch();
-	if (player1_input == '1') {
+ 	if (player1_input == '1') {
 	rock();
 	}else if (player1_input == '2'){
 	paper();
 	}else if (player1_input == '3'){
 	scissors();
 	}else {
-	mvaddstr(19, 80,"Invalid input /n");
+	mvaddstr(19, 80,"Invalid input");
 	}
 refresh();
 
@@ -42,45 +42,44 @@ player2_input= getch();
 	}else if (player2_input == '3'){
 	scissors_p2();
 	}else {
-	mvaddstr(19, 80,"Invalid input /n");
+	mvaddstr(19, 80,"Invalid input");
 	}
 reload();
-
 {
-     
-    if ((player1_input==1)&&(player2_input==1))
+      
+    if ((player1_input=='1')&&(player2_input=='1'))
       {
-        printf("Nobody Wins");
+        mvaddstr(19, 80,"Nobody Wins");
       }
-    else if ((player1_input==1)&&(player2_input==2))
-      { printf("Paper Covers Rock");
+    else if ((player1_input=='1')&&(player2_input=='2'))
+      { mvaddstr(19, 80,"Paper Covers Rock");
       }
-    else if ((player1_input==1)&&(player2_input==3))
-      { printf("Rock Breaks Scissors");
+    else if ((player1_input=='1')&&(player2_input=='3'))
+      { mvaddstr(19, 80,"Rock Breaks Scissors");
       }
-    else if((player1_input==2)&&(player2_input==1))
-      { printf("Paper Covers Rock");
+    else if((player1_input=='2')&&(player2_input=='1'))
+      { mvaddstr(19, 80,"Paper Covers Rock");
       }
-    else if((player1_input==2)&&(player2_input==2))
-      { printf("Nobody Wins");
+    else if((player1_input=='2')&&(player2_input=='2'))
+      { mvaddstr(19, 80,"Nobody Wins");
       }
-    else if((player1_input==2)&&(player2_input==3))
-      { printf("Scissors Cuts Paper");
+    else if((player1_input=='2')&&(player2_input=='3'))
+      { mvaddstr(19, 80,"Scissors Cuts Paper");
       }
-    else if((player1_input==3)&&(player2_input==1))
-      { printf("Rock Breaks Scissors");
+    else if((player1_input=='3')&&(player2_input=='1'))
+      { mvaddstr(19, 80,"Rock Breaks Scissors");
       }
-    else if((player1_input==3)&&(player2_input==2))
-      { printf("Scissors Cuts Paper");
+    else if((player1_input=='3')&&(player2_input=='2'))
+      { mvaddstr(19, 80,"Scissors Cuts Paper");
       }
-    else if((player1_input==3)&&(player2_input==3))
-      { printf("Nobody Wins");
+    else if((player1_input=='3')&&(player2_input=='3'))
+      { mvaddstr(19, 80,"Nobody Wins");
       }
     else
-      { printf("You have selected an invalid selection.\n");
+      { mvaddstr(19, 80,"You have selected an invalid selection.\n");
        
       }
-  
+reload();  
     
    }
   endwin();
